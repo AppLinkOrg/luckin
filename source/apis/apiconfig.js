@@ -1,13 +1,13 @@
 export class ApiConfig {
 
   static GetApiUrl() {
-    return "https://cmsdev.app-link.org/alucard263096/kitchen/api/";
+    return "https://cmsdev.app-link.org/alucard263096/luckin/api/";
   }
   static GetUploadPath() {
-    return "https://alioss.app-link.org/alucard263096/kitchen/";
+    return "https://alioss.app-link.org/alucard263096/luckin/";
   }
   static GetFileUploadAPI() {
-    return "https://cmsdev.app-link.org/alucard263096/kitchen/fileupload";
+    return "https://cmsdev.app-link.org/alucard263096/luckin/fileupload";
   }
 
   static GetHeader() {
