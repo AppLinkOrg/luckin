@@ -1,0 +1,8 @@
+/* pages/member/member.wxss */
+
+.shadow{
+   -webkit-box-shadow: #666 0px 0px 10px;
+   -moz-box-shadow: #666 0px 0px 10px;
+   box-shadow: #666 0px 0px 10px;
+   background: gray;
+}

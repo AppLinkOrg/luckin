@@ -1,0 +1,36 @@
+<!-- 定位模块 -->
+
+
+<view class="flex-row text-center padding-20">
+  <view class="flex-1"></view>
+  <view class="h5 margin-right">所在城市:</view>
+  <view class="h5 txt-black">深圳</view>
+  <view class="flex-1"></view>
+</view>
+<!-- 切换模块 -->
+
+
+<!-- 店铺列表 -->
+<view class='padding-20'>
+  <view class='border-bottom flex-row flex-center margin-top-10 padding-bottom-10' wx:for="{{shoplist}}" wx:key="k" id="{{item.id}}" bindtap='chooseShop'>
+    <view class='margin-right' wx:if="{{SHOPID==item.id}}">
+    <image class='icon' src='{{uploadpath}}resource/{{res.ticker}}'></image>
+    </view>
+    <view class='flex-1'>
+      <view class="txt-bold padding-10">{{item.name}}</view>
+      <view class=" padding-left-10 h5 flex-row flex-center">
+        <view class="h5">
+          <image class='icon-15 margin-left-5 padding-right-10 margin-top-5' src='{{uploadpath}}resource/{{res.shijian}}'></image></view>
+        <view class="flex-1 h6">
+          {{item.openningstr}}</view>
+        <view class="h5  margin-5">{{item.miletxt}}</view>
+      </view>
+      <view class=" padding-left-10 h5 flex-row flex-center">
+        <view class="h5">
+          <image class='icon-15 margin-left-5 padding-right-10 margin-top-5' src='{{uploadpath}}resource/{{res.dinwei1}}'></image></view>
+        <view class="flex-1 h6">
+          {{item.address}}</view>
+      </view>
+    </view>
+  </view>
+</view>

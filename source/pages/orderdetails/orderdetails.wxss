@@ -1,0 +1,89 @@
+page{
+
+background-color: #FAFAFA;
+
+}
+
+.v1{
+  border-radius: 60rpx;
+  border:2rpx solid #5FE0A3;
+  padding:2rpx;
+}
+
+.v2{
+  padding:10rpx 20rpx 10rpx 20rpx;
+}
+.avt{
+  background: #5FE0A3;
+  border-radius: 60rpx;
+  color:white;
+}
+.hei{
+
+  color:#5FE0A3;
+}
+
+
+.bg{
+background-color: white;
+
+}
+.xm{
+ padding-top:30rpx;
+ padding-bottom: 30rpx;
+
+
+}
+.jiesuan{
+
+
+
+  width: 100%;
+  position: fixed;
+  bottom:0px;
+  display: flex;
+  justify-content: center;
+
+
+
+}
+text{
+overflow:hidden; 
+
+text-overflow:ellipsis;
+
+white-space:nowrap; 
+
+}
+.gs{
+margin-top:3rpx;
+padding-top:2rpx;
+padding-bottom: 2rpx;
+padding-left:7rpx;
+padding-right: 7rpx;
+border-radius: 5rpx;
+border:1px solid #5FE0A3;
+background-color: #5FE0A3;
+
+}
+.img{
+
+ margin-left:5rpx; 
+ padding-right:10rpx;
+  margin-top:10rpx;
+ 
+
+}
+.wx-switch-input{
+    
+    background: #5FE0A3 !important;
+    border: #5FE0A3 !important; /* 2018-07-18 重置开关边框颜色 */
+}
+.single {
+ /* 超出的文本内容隐藏 */ 
+overflow: hidden;
+/* 超出显示省略号 */ 
+text-overflow: ellipsis;
+/* 强制不换行 */ 
+white-space: nowrap;
+}

@@ -1,0 +1,31 @@
+page{
+
+background-color: #FAFAFA;
+
+}
+.bg{
+background-color: white;
+
+}
+.xm{
+ padding-top:30rpx;
+ padding-bottom: 30rpx;
+
+
+}
+.aa{
+
+  color: #5FE0A3;
+}
+.jiesuan{
+
+
+
+  width: 100vw;
+  position: fixed;
+  bottom:0px;
+  justify-content: center;
+
+
+
+}

@@ -1,0 +1,16 @@
+/**index.wxss**/
+page{
+  background: white;
+}
+.dot{
+  width:10rpx;
+  height: 10rpx;
+  background-color:#bbbbbb;
+  border-radius: 50%;
+}
+checkbox .wx-checkbox-input{
+border-radius: 7rpx;
+height: 26rpx;
+width: 26rpx;
+margin-top: -4rpx;
+}

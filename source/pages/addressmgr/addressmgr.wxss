@@ -1,0 +1,20 @@
+/* pages/addressmgr/addressmgr.wxss */
+.bg{
+  background-color: #5FE0A3;
+}
+.yj1{
+
+border-radius: 8rpx;
+padding-left:13rpx;
+padding-right: 13rpx;
+padding-top:10rpx;
+padding-bottom:10rpx;
+}
+.yj2{
+
+border-radius: 8rpx;
+padding-left:17rpx;
+padding-right: 17rpx;
+padding-top:10rpx;
+padding-bottom:10rpx;
+}

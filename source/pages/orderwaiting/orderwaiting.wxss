@@ -1,0 +1,92 @@
+page{
+
+background-color: #FAFAFA;
+
+}
+.bg{
+background-color: white;
+
+}
+.xm{
+ padding-top:30rpx;
+ padding-bottom: 30rpx;
+
+
+}
+.jiesuan{
+
+
+
+  width: 100%;
+  position: fixed;
+  bottom:0px;
+  display: flex;
+  justify-content: center;
+
+
+
+}
+text{
+overflow:hidden; 
+
+text-overflow:ellipsis;
+
+white-space:nowrap; 
+
+}
+.gs{
+margin-top:3rpx;
+padding-top:2rpx;
+padding-bottom: 2rpx;
+padding-left:7rpx;
+padding-right: 7rpx;
+border-radius: 5rpx;
+border:1px solid #7FA9D3;
+background-color: #7FA9D3;
+
+}
+.img{
+
+ margin-left:5rpx; 
+ padding-right:10rpx;
+  margin-top:10rpx;
+ 
+
+}
+.wx-switch-input{
+    
+    background: #7FA9D3 !important;
+    border: #7FA9D3 !important; /* 2018-07-18 重置开关边框颜色 */
+}
+.single {
+ /* 超出的文本内容隐藏 */ 
+overflow: hidden;
+/* 超出显示省略号 */ 
+text-overflow: ellipsis;
+/* 强制不换行 */ 
+white-space: nowrap;
+}
+.anniu{
+
+padding-top:10rpx;
+padding-bottom:10rpx;
+padding-left:5rpx;
+padding-right:5rpx;
+border:1px solid #BBBBBB;
+margin:10rpx;
+color: black;
+border-radius: 10rpx;
+
+}
+
+.anniu1{
+
+padding-top:10rpx;
+padding-bottom:10rpx;
+padding-left:5rpx;
+padding-right:5rpx;
+border:1px solid #7FA9D3;
+color: #7FA9D3;
+margin:10rpx;
+border-radius: 10rpx;
+}

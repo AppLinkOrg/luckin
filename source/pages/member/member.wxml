@@ -1,0 +1,52 @@
+<!--pages/member/member.wxml-->
+<view style=' background-size:100% 100%;background-image:url("{{uploadpath}}resource/{{res.memberbg}}")' class='padding flex-row flex-center' >
+  <view class='padding-20'>
+    <image class='icon-50 radius-50 shadow ' src='{{UserInfo.avatarUrl}}'></image>
+  </view>
+  <view class='flex-1'>
+    {{memberinfo.nickName}}
+  </view>
+  <view class='margin-left' hidden='1'>
+    <image class='icon' src='{{uploadpath}}resource/{{res.	you}}'></image>
+  </view>
+</view>
+<view class=' padding-40'>
+  <view>
+    <navigator url='/pages/addressmgr/addressmgr' class='flex-row flex-center  ' hover-class="none">
+      <view class='margin-right line-height-0' >
+        <image class='icon' src='{{uploadpath}}resource/{{res.	address}}'></image>
+      </view>
+      <view class='flex-1 ' >收货地址</view>
+      <view class='line-height-0'>
+        <image class='icon' src='{{uploadpath}}resource/{{res.	you}}'></image>
+      </view>
+    </navigator>
+    <button class=' clear-contact ceshi  ' style='width:750rpx;height:100rpx;' open-type='contact' ></button>
+    <view class='flex-row flex-center margin-top-60' bindtap=''>
+      <view class='margin-right line-height-0' >
+        <image class='icon' src='{{uploadpath}}resource/{{res.service}}'></image>
+      </view>
+      <view class='flex-1 '>客户服务</view>
+      <view class='line-height-0'>
+        <image class='icon' src='{{uploadpath}}resource/{{res.	you}}'></image>
+      </view>
+    </view>
+
+
+
+    
+    <view bindtap='openContent' data-keycode="aboutus" data-title="关于我们" class='flex-row   flex-center margin-top-60 '>
+      <view class='margin-right line-height-0' >
+        <image class='icon' src='{{uploadpath}}resource/{{res.	about}}'></image>
+      </view>
+
+      <view class='flex-1  '>关于我们</view>
+      <view class='line-height-0'>
+        <image class='icon' src='{{uploadpath}}resource/{{res.	you}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+  <image  class='fixedbottom ' src='{{uploadpath}}resource/{{res.img}}' style='height:280rpx;' mode="aspectFill"></image>

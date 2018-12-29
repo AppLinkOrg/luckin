@@ -1,0 +1,126 @@
+<!-- 顶部 -->
+<view class="flex-center flex-row padding-20 bg">
+  <view class="">
+    <view class="flex-bottom flex-row flex-center text-right">
+      {{expresstype=='A'?'立即可取':'立即配送'}}
+    </view>
+    <view class="margin-top-10 flex-bottom flex-row flex-center">
+      <view class="h5">约</view>
+      <view class="h4" style='color:#5FE0A3'>{{expresstype=='A'?shop.ziti: shop.songhuo}}</view>
+      <view class="h5">{{expresstype=='A'?'可取':'送达'}}</view>
+    </view>
+  </view>
+  <view class='flex-1'>
+
+  </view>
+  <view>
+    <view class='v1 flex-row flex-center' bindtap='changeExpress'>
+      <view class="v2   h5 {{expresstype=='A'?'avt':'hei'}}" >自提</view>
+      <view class="v2  h5 {{expresstype=='B'?'avt':'hei'}}" >送货</view>
+    </view>
+  </view>
+</view>
+<!-- 配送信息部分 -->
+<view class="padding-20 margin-top-5 bg" wx:if="{{expresstype=='B'}}">
+  <view class="h5 txt-bold">配送信息</view>
+
+  <navigator url='/pages/addressmgr/addressmgr?needreturn=Y' class='flex-row margin-top-10 flex-center' >
+    <view class='flex-1' wx:if="{{address_id>0}}">
+      <view class='h5'>
+        {{addressinfo.address}} {{addressinfo.menpai}} 
+      </view>
+      <view class='h6 txt-gray'>
+        {{addressinfo.mobile}} {{addressinfo.name}}
+      </view>
+    </view>
+    <view url='/pages/addressmgr/addressmgr?needreturn=Y' class='flex-1 h5 txt-gray' wx:if="{{address_id==0}}">
+      请选择送货地址
+    </view>
+    <view url='/pages/addressmgr/addressmgr?needreturn=Y' class='margin-left'>
+      <image class='icon '  src='{{uploadpath}}resource/{{res.you}}'></image>
+    </view>
+  </navigator>
+</view>
+<view class="padding-20 margin-top-5 bg" wx:if="{{expresstype=='A'}}">
+  <view class="h5 txt-bold">自提门店</view>
+
+  <view class='flex-row margin-top-10 flex-center'>
+    <view class='flex-1'>
+      <view class=''>
+        {{shop.name}}
+      </view>
+      <view class='h6 txt-gray'>
+        {{shop.address}}
+      </view>
+    </view>
+    <view>
+      <image class='icon ' bindtap='openMap' id="{{shop.address}}" src='{{uploadpath}}resource/{{res.dinwei}}'></image>
+    </view>
+  </view>
+
+  <view class='flex-row margin-top'>
+    <view class='flex-1 flex-row flex-center'>
+      <view class='flex-1'></view>
+      <view class='margin-right' bindtap='selecteat' id="1">
+        <image class='icon' src='{{uploadpath}}resource/{{eat=="1"?res.check:res.uncheck}}'></image>
+      </view>
+      <view class='f1 h5'>店内用餐</view>
+      <view class='flex-1'></view>
+    </view>
+    <view class='flex-1 flex-row flex-center'>
+      <view class='flex-1'></view>
+      <view class='margin-right'>
+        <image class='icon' bindtap='selecteat' id="2" src='{{uploadpath}}resource/{{eat=="2"?res.check:res.uncheck}}'></image>
+      </view>
+      <view class='f1 h5'>打包带走</view>
+      <view class='flex-1'></view>
+    </view>
+  </view>
+
+
+</view>
+<!-- 订单信息部分 -->
+<view class="padding-20 margin-top-5 bg">
+  <view class='border-bottom' style='padding-bottom:20rpx'>
+    <view class="h5 txt-bold">订单信息</view>
+    <view class="flex-row flex-center margin-top-10" wx:for="{{orderitem}}" wx:key="k">
+      <view class="flex-3" style='height:80rpx;'>
+        <view class="h5 txt-bold">{{item.goods_name}}</view>
+        <view class="h6">{{item.valstr}}</view>
+      </view>
+      <view class="flex-1 text-right h6">x {{item.num}}</view>
+      <view class="flex-1  text-right h5 txt-bold">￥{{item.numprice}}</view>
+    </view>
+
+
+    <view class="flex-row flex-center margin-top-10" wx:if="{{expresstype=='B'}}">
+      <view class="flex-3 flex-wrap flex-center">
+        <view class="h5 txt-bold">配送费</view>
+        <view class="h6 txt-orange">面价满{{instinfo.expressfreeup}}元免配送费</view>
+      </view>
+      <view class="flex-1"></view>
+      <view class="flex-1 text-right">￥{{totalprice>=instinfo.expressfreeup?0:instinfo.expressfee}}</view>
+    </view>
+
+  </view>
+  <view class="flex-row margin-top-20">
+    <view class="flex-1"></view>
+    <view>
+      合计
+    </view>
+    <view class="txt-bold">
+      ￥{{totalprice+((expresstype=='B'&&totalprice
+      <instinfo.expressfreeup)?instinfo.expressfee:0)}} </view>
+    </view>
+
+  </view>
+
+  <!-- 底部 -->
+  <view class="flex-row flex-center jiesuan">
+    <view class="flex-row  flex-3 bg  xm ">
+      <view class="flex-1 margin-left-20 ">还需支付</view>
+      <view class="flex-2 txt-bold bg">￥{{totalprice+((expresstype=='B'&&totalprice
+        <instinfo.expressfreeup)?instinfo.expressfee:0)}}</view>
+      </view>
+      <view class="flex-2 text-center  txt-white xm" style='background-color:#5FE0A3' bindtap='payment'>去支付</view>
+    </view>

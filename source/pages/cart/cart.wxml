@@ -1,0 +1,71 @@
+<view wx:if="{{cartorder.length==0}}" class='text-center'>
+  <view class=' margin-top-80'>
+    <image class='icon-50 margin-top-60' src='{{uploadpath}}resource/{{res.nodata}}'></image>
+  </view>
+  <view class='txt-gray h5 margin-top'>
+    您的购物车空空空空如也~
+  </view>
+  <view class='txt-gray h5 margin-top-40'>
+    <button size='mini' bindtap='gotoMenu'>去喝一杯</button>
+  </view>
+</view>
+
+<block wx:if="{{cartorder.length>0}}">
+<view class="flex-row flex-center" >
+  <view class=" padding-20" bindtap='chooseShop'>
+    <image class='icon-25 margin-left-20' src='{{uploadpath}}resource/{{res.dinwei}}'></image>
+  </view>
+  <view class=" padding-20 flex-1" bindtap='chooseShop'>
+    <view class="h5 txt-black">{{currentshop.name}}<text class="h5 txt-black" wx:if="{{!is}}">(本店已打烊)</text></view>
+    <view class='flex-row flex-bottom'>
+      <view class="h6 txt-gray flex-1">{{currentshop.address}}</view>
+      <view class="h6 txt-gray">距您 {{currentshop.miletxt}}</view>
+    </view>
+  </view>
+</view>
+<view class="flex-row padding-20 flex-center bg" wx:for="{{cartorder}}" wx:key="k" >
+  <view id="{{item.id}}_N" wx:if="{{item.checked_value=='Y'}}" bindtap='changexz' class="flex-1" >
+    <image class='icon-30 margin-left-20' src='{{uploadpath}}resource/{{item.cansales=="Y"?res.xuanzhong:res.xuanzhonghui}}'></image>
+  </view>
+  <view id="{{item.id}}_Y" wx:if="{{item.checked_value!='Y'}}" bindtap='changexz' class="flex-1">
+    <image class='icon-30 margin-left-20' src='{{uploadpath}}resource/{{item.cansales=="Y"?res.buxuanzhong:res.buxuanzhonghui}}'></image>
+  </view>
+  <view class="flex-5">
+    <view class="txt-bold">{{item.goods_name}}{{item.checked_value}}{{item.cansales}}<text wx:if="{{item.cansales!='Y'}}" class='h6 txt-red'> (没有此商品)</text></view>
+    <view class='h6 '>{{item.valstr}}</view>
+    <view class="txt-black margin-top-5 flex-row flex-bottom">
+      <block wx:if="{{item.havediscount=='Y'}}">
+        <view class=" txt-bold txt-red">￥{{item.oneprice}}</view>
+        <view class=" txt-gray h6 text-line-through margin-left">￥{{item.oldprice}}</view>
+      </block>
+      <block wx:else>
+        <view class=" txt-bold ">￥{{item.oneprice}}</view>
+      </block>
+      <view class='flex-1'></view>
+      <view class='flex-row'>
+        <view bindtap='jian' id="{{item.id}}">
+          <image class='icon padding-right-20 ' src='{{uploadpath}}resource/{{res.jianshao}}'></image>
+        </view>
+        <view class="text-center" style='width:50rpx;'>{{item.num}}</view>
+        <view bindtap='jia' id="{{item.id}}">
+          <image class='icon padding-left-20 padding-right-20 ' src='{{uploadpath}}resource/{{res.zengjia}}'></image>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+</view>
+<view class='jiesuan'>
+  <view class="flex-row flex-center " style='width:100%;'>
+    <view class="flex-row margin-left-20 flex-3 bg  xm ">
+      <view class="flex-1  ">应付合计</view>
+      <view class="flex-2 txt-bold bg">￥{{totalprice}}</view>
+    </view>
+    <view  wx:if="{{is==true&totalprice>0}}" class="flex-2 text-center   txt-white txt-bold xm" style='background-color:#5FE0A3' bindtap='gotoConfirm'>去结算</view>
+  <view  wx:if="{{is==false||totalprice==0}}" class="flex-2 text-center   txt-white txt-bold xm" style='background-color:#B3B3B3' bindtap=''>去结算</view>
+   
+  </view>
+</view>
+</block>

@@ -1,0 +1,61 @@
+<view class="flex-row flex-center" style='height:120rpx;'>
+  <view class=" padding-20" bindtap='chooseShop'>
+    <image class='icon-17 margin-left-20' src='{{uploadpath}}resource/{{res.dinwei}}'></image>
+  </view>
+  <view class=" padding-20 flex-wrap" bindtap='chooseShop'>
+    <view class="h5 txt-black">{{currentshop.name}}</view>
+    <view class="h6 txt-gray">距您 {{currentshop.miletxt}}</view>
+  </view>
+  <view class="flex-1"></view>
+</view>
+<view class='line-height-0'>
+  <image src='{{uploadpath}}resource/{{res.img}}' style='width:100%;height:280rpx;' mode="aspectFill"></image>
+</view>
+
+<scroll-view class='menuopt'>
+
+  <view class='flex-row' style='height:100%'>
+    <!-- 分类列表 -->
+    <scroll-view scroll-y class='flex-1 bg-gray' style='height:100%;'>
+      <view wx:for="{{menu}}" wx:for-key="k" class='h5 text-center padding  {{item.id==selectcat_id?"white-block":"txt-gray"}}' id="{{item.id}}" bindtap='gotoCat'>
+        {{item.name}}
+      </view>
+    </scroll-view>
+    <!-- 商品列表 -->
+    <scroll-view scroll-y class='flex-3   flex-row column ' style='height:100%;' bindscroll="goodsscroll" scroll-into-view="{{intocat_id}}">
+      <view class='padding-20'>
+        <view wx:for="{{menu}}" wx:for-key="k">
+          <view id="cat_{{item.id}}">
+            <view class='h5'>{{item.name}}</view>
+            <view class='flex-row flex-center'>
+              <view class='h6 txt-gray'>{{item.summary}}</view>
+              <view class='margin-right'></view>
+              <view class='flex-1 line bg-gray'></view>
+            </view>
+          </view>
+          <view wx:for="{{item.goods}}" wx:key="k2" wx:for-item="goods" wx:for-index="idx" class='flex-row flex-center margin-top-10 margin-bottom-10' bindtap='selectgoods' id="{{goods.goods_id}}">
+            <view>
+              <image class="icon-75" src='{{uploadpath}}goods/{{goods.goods_photo}}'></image>
+            </view>
+            <view class='margin-right'></view>
+            <view class='flex-1'>
+              <view class=' txt-bold'>{{goods.goods_name}}</view>
+              <view class='h7 txt-gray'>{{goods.goods_engname}}</view>
+              <view class='h7 txt-gray'>{{goods.goods_defaultselect}}</view>
+              <view class='flex-row flex-center'>
+                <view class='flex-1 txt-bold'>¥{{goods.goods_price}}</view>
+                <view>
+                  <image class="icon" src='{{uploadpath}}resource/{{res.zengjia}}'></image>
+                </view>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+
+
+</scroll-view>

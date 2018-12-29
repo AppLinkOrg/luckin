@@ -1,0 +1,4 @@
+/* pages/content/content.wxss */
+page{
+  background-color:white;
+}

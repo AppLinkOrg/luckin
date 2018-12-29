@@ -1,0 +1,6 @@
+<!--pages/content/content.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
+<view  class='nostyle padding-40'>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>

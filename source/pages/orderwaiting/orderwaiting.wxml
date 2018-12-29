@@ -1,0 +1,212 @@
+<view wx:if="{{info}}">
+  <!-- 待付款 -->
+  <view class="bg border-bottom" wx:if="{{info.status=='P'}}">
+    <view class=" flex-row flex-center  padding-20">
+      <view class="flex-1"></view>
+      <view class="margin-top-20 txt-bold">待付款</view>
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row flex-center text-center">
+      <view class="flex-1"></view>
+      <view class="h5">请在</view>
+      <view class="h5" style='color:#7FA9D3'>{{fen}}分{{miao}}秒</view>
+      <view class="h5">内完成支付,过时订单将会取消</view>
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row flex-center margin-20 text-center">
+      <view class="flex-1"></view>
+      <view class="flex-2  anniu" bindtap='cancel'>取消订单</view>
+      <view class="flex-2  anniu1" bindtap='payment'>去支付</view>
+      <view class="flex-1"></view>
+    </view>
+  </view>
+
+
+<!-- 等待自提 -->
+ <view class="bg border-bottom" wx:if="{{info.status=='U'}}">
+    <view >
+      <view class=" flex-row flex-center  padding-20">
+        <view class="flex-1"></view>
+        <view class="margin-top-20 txt-bold">等待自提</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="flex-row flex-center text-center">
+        <view class="flex-1"></view>
+        <view class="h5">制作完成，等待自提</view>
+        
+      
+        <view class="flex-1"></view>
+      </view>
+       <view class="flex-row flex-center margin-20 text-center">
+         <view class="flex-1"></view>
+        <!-- <view class="flex-2  anniu" bindtap='payment'>取消订单</view> -->
+        <view class="flex-2  anniu1" bindtap=''>取餐码</view>
+        <view class="flex-1"></view> 
+      </view> 
+    </view>
+
+    
+  </view>
+
+  <!-- 已完成 -->
+ <view class="bg border-bottom" wx:if="{{info.status=='S'}}">
+    <view >
+      <view class=" flex-row flex-center  padding-20">
+        <view class="flex-1"></view>
+        <view class="margin-top-20 txt-bold">已完成</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="flex-row flex-center text-center">
+        <view class="flex-1"></view>
+        <view class="h5">订单已完成</view>
+        
+      
+        <view class="flex-1"></view>
+      </view>
+       <view class="flex-row flex-center margin-20 text-center">
+         <view class="flex-1"></view>
+        <!-- <view class="flex-2  anniu" bindtap='payment'>取消订单</view> -->
+        <view class="flex-2  anniu1" bindtap=''>再来一单</view>
+        <view class="flex-1"></view> 
+      </view> 
+    </view>
+
+    
+  </view>
+
+  <!-- 制作中 -->
+  <view class="bg border-bottom" wx:if="{{info.status=='K'}}">
+    <view wx:if="{{info.expresstype=='A'}}">
+      <view class=" flex-row flex-center  padding-20">
+        <view class="flex-1"></view>
+        <view class="margin-top-20 txt-bold">精心制作中</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="flex-row flex-center text-center">
+        <view class="flex-1"></view>
+        <view class="h5">正在制作您的餐品,预计</view>
+        <view class="h5" style='color:#7FA9D3'>{{shop.ziti}}</view>
+        <view class="h5">可制作完成</view>
+        <view class="flex-1"></view>
+      </view>
+       <view class="flex-row flex-center margin-20 text-center">
+         <view class="flex-1"></view>
+        <!-- <view class="flex-2  anniu" bindtap='payment'>取消订单</view> -->
+        <view class="flex-2  anniu1" bindtap=''>取餐码</view>
+        <view class="flex-1"></view> 
+      </view> 
+    </view>
+
+    <view wx:if="{{info.expresstype=='B'}}">
+      <view class=" flex-row flex-center  padding-20">
+        <view class="flex-1"></view>
+        <view class="margin-top-20 txt-bold">下单成功</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="flex-row flex-center text-center">
+        <view class="flex-1"></view>
+        <view class="h5">预计</view>
+        <view class="h5" style='color:#7FA9D3'>{{shop.songhuo}}</view>
+        <view class="h5">送达,请耐心等待</view>
+        <view class="flex-1"></view>
+      </view>
+      <view class="flex-row flex-center margin-20 text-center">
+        <view class="flex-1"></view>
+        <view class="flex-2  anniu" bindtap='cancel'>取消订单</view>
+       <view class="flex-2  anniu1" bindtap=''>取餐码</view>
+        <view class="flex-1"></view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 已取消 -->
+  <view class="bg " wx:if="{{info.status=='G'}}">
+    <view class=" flex-row flex-center  padding-20">
+      <view class="flex-1"></view>
+      <view class="margin-top-20 txt-bold">已取消</view>
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row flex-center text-center">
+      <view class="flex-1"></view>
+      <view class="h5">期待您再次光临.</view>
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row flex-center margin-20 text-center">
+      <view class="flex-1"></view>
+
+      <view class="flex-1"></view>
+    </view>
+  </view>
+
+
+<view class="padding-20 bg margin-top-5 " style=''>
+  <view class=" flex-row flex-center bg  padding-top-40 padding-bottom-40" style='border-bottom:1px solid #E6E6E6;'>
+    <view class="flex-1 h5  ">{{info.status_name}}:{{info.orderno}}</view>
+    <view class="h5">{{info.submit_time_formatting}}</view>
+  </view>
+  </view>
+  <view class="padding-20 bg">
+    <view style='border-bottom:1px  solid #E6E6E6;padding-bottom:20rpx'>
+
+      <view class="flex-row flex-center " wx:for="{{orderitem}}" wx:key="k">
+        <view class="flex-3 flex-wrap flex-center" style='height:80rpx;'>
+          <view class=" txt-bold">{{item.goods_name}}</view>
+          <view class="h5">{{item.valsstr}}</view>
+        </view>
+        <view class="flex-1 text-right">x{{item.num}}</view>
+        <view class="flex-1  text-right">￥{{item.discountprice}}</view>
+
+
+      </view>
+
+
+      <view class="flex-row flex-center margin-top-10" wx:if="{{info.expresstype=='B'}}">
+        <view class="flex-3 flex-wrap flex-center">
+          <view class="h5 txt-bold">配送费</view>
+
+        </view>
+        <view class="flex-1"></view>
+        <view class="flex-1 text-right">￥{{info.amount>=instinfo.expressfreeup?0:instinfo.expressfee}}</view>
+
+
+      </view>
+
+    </view>
+    <view class="flex-row flex-bottom margin-top-20">
+      <view class="flex-1"></view>
+      <view class="margin-right-10 h6">共1件商品</view>
+
+      <view>
+        实付
+      </view>
+      <view class="txt-bold">
+        ￥{{info.amount+((info.expresstype=='B'&&totalprice
+        <instinfo.expressfreeup)?instinfo.expressfee:0)}} </view>
+      </view>
+
+    </view>
+    <view class="padding-20 margin-top-5 bg flex-row" wx:if="{{info.expresstype=='A'}}">
+      <view class="margin-right txt-bold">
+        自提地址
+      </view>
+      <view class="flex-1 text-right">
+        <view class="h5 " bindtap='openMap' id="{{info.shop_address}}">{{info.shop_name}}</view>
+        <view class="h5 " bindtap='openMap' id="{{info.shop_address}}">{{info.shop_address}}</view>
+        <view class="h5 " bindtap='phoneCall' id="{{info.shop_tel}}">{{info.shop_tel}}</view>
+      </view>
+    </view>
+    <view class="padding-20 margin-top-5 bg flex-row" wx:if="{{info.expresstype=='B'}}">
+      <view class="margin-right txt-bold">
+        送货地址
+      </view>
+      <view class="flex-1 text-right">
+        <view class="h5 ">{{info.address_address}} {{info.address_menpai}}</view>
+        <view class="h5 ">{{info.address_name}}</view>
+        <view class="h5 ">{{info.address_mobile}}</view>
+      </view>
+    </view>
+    <view class=' margin-top-10'>
+      <image src='{{uploadpath}}resource/{{res.img}}' style='width:100%;height:280rpx;' mode="aspectFill"></image>
+    </view>
+  </view>

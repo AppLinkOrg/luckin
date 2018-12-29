@@ -1,0 +1,62 @@
+<view wx:if="{{list.length==0}}" class='text-center'>
+  <view class=' margin-top-80'>
+    <image class='icon-50 margin-top-60' src='{{uploadpath}}resource/{{res.nodata}}'></image>
+  </view>
+  <view class='txt-gray h5 margin-top'>
+    您还没有订单哦
+  </view>
+  <view class='txt-gray h5 margin-top-40'>
+    <button size='mini' bindtap='gotoMenu'>去喝一杯</button>
+  </view>
+</view>
+
+<view wx:if="{{list.length>0}}" wx:for="{{list}}" wx:key="k">
+<view class="padding-20 bg">
+  <view class="flex-row  bg margin-top-5  padding-bottom-20" style='border-bottom:1px solid #E6E6E6'  >
+    <view class="flex-1 h5" style='color:#979797'>{{item.expresstype_name}} : {{item.orderno}}</view>
+    <view  wx:if="{{item.status!='P'&&item.status!='K'}}" class="h5" style='color:#979797'>{{item.status_name}}</view>
+
+       <view wx:if="{{item.status=='P'}}" class="h5" style='color:#FF9800'>{{item.status_name}}</view>
+        <view wx:if="{{item.status=='K'}}" class="h5" style='color:#67E2A8'>{{item.status_name}}</view>
+       </view>
+  </view>
+
+
+  <navigator url='/pages/orderwaiting/orderwaiting?id={{item.id}}&shop_id={{item.shop_id}}'  wx:if="{{item.status!='P'}}" class="padding-20 bg  ">
+    <view class="flex-row">
+      <view class="txt-black txt-bold flex-3">{{item.shop_name}}</view>
+      <view class="h7 flex-1">{{item.submit_time_formatting}}</view>
+    </view>
+    <view class="flex-row margin-top-10">
+      <view class="h5">{{item.goodssummary}}</view>
+      <view class="margin-left-20 h5"> 共{{item.goodscount}}件商品</view>
+    </view>
+    <view class="flex-row margin-top-20">
+      <view class="flex-1 padding-top-10  txt-black txt-bold">￥{{item.amount+item.expressfee}}</view>
+      <navigator url='/pages/orderwaiting/orderwaiting?id={{item.id}}' class="qzf" style='color:#b27b83' wx:if="{{item.status=='P'}}"> 支付</navigator>
+      <!-- <navigator url='/pages/orderwaiting/orderwaiting?id={{item.id}}' class="qzf" style='color:#b27b83' wx:if="{{item.status!='P'}}"> 详情</navigator> -->
+    </view>
+  </navigator>
+
+
+
+   <view  wx:if="{{item.status=='P'}}" class="padding-20 bg  ">
+    <view class="flex-row">
+      <view class="txt-black flex-3">{{item.shop_name}}</view>
+      <view class="h7 flex-1">{{item.submit_time_formatting}}</view>
+    </view>
+    <view class="flex-row margin-top-10">
+      <view class="h5">{{item.goodssummary}}</view>
+      <view class="margin-left-20 h5"> 共{{item.goodscount}}件商品</view>
+    </view>
+    <view class="flex-row margin-top-20">
+      <view class="flex-1 padding-top-10">￥{{item.amount+item.expressfee}}</view>
+      <navigator url='/pages/orderwaiting/orderwaiting?id={{item.id}}' class="qzf h5" style='color:#FF9800' wx:if="{{item.status=='P'}}"> 支付</navigator>
+      <!-- <navigator url='/pages/orderwaiting/orderwaiting?id={{item.id}}' class="qzf" style='color:#b27b83' wx:if="{{item.status!='P'}}"> 详情</navigator> -->
+    </view>
+  </view>
+
+
+
+  <view style='height:3px;'></view>
+</view>

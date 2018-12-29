@@ -1,0 +1,29 @@
+.xx-Y{
+border-radius: 35rpx;
+background-color: white;
+font-size: 24rpx;
+width:25%;
+border:1px solid #5FE0A3;
+color: #5FE0A3;
+}
+.xx-N{
+
+border-radius: 35rpx;
+background-color: #E6E6E6;
+font-size: 24rpx;
+width:25%;
+border:1px solid white
+}
+.bg1{
+background-color:#5FE0A3;
+padding-top:20rpx;
+padding-bottom:20rpx;
+margin:10rpx;
+}
+.bg2{
+background-color:#7FA9D3;
+padding-top:20rpx;
+padding-bottom:20rpx;
+margin:10rpx;
+  
+}

@@ -1,0 +1,9 @@
+.aa{
+
+color: #9baac6;
+
+}
+.bb{
+width:80%;border:1px solid #9baac6;margin-top:10rpx;margin-left:8rpx
+
+}
