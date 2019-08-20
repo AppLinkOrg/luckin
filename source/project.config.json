@@ -18,6 +18,8 @@
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -27,13 +29,66 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/member/member",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "编辑",
+					"pathName": "pages/edit/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "送他",
+					"pathName": "pages/send/send",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "钱包/purse",
+					"pathName": "pages/purse/purse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账户余额/yue",
+					"pathName": "pages/yue/yue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "余额明细yuedetail",
+					"pathName": "pages/yuedetail/yuedetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发票/fapiao",
+					"pathName": "pages/fapiao/fapiao",
+					"scene": null
+				}
+			]
 		}
 	}
 }

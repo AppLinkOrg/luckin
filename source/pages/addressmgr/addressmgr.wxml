@@ -1,4 +1,4 @@
-<!--pages/addressmgr/addressmgr.wxml-->
+<view class="top"></view>
 <view wx:if="{{list.length==0}}" class='text-center'>
   <view class=' margin-top-80'>
     <image class='icon-50 margin-top-60' src='{{uploadpath}}resource/{{res.nodata}}'></image>
@@ -9,36 +9,37 @@
 </view>
 
 <block wx:if="{{list.length>0}}">
-<view class='padding h6 txt-gray'>
-  我的收货地址
-</view>
+  <view class='padding h6 txt-gray'>
+    我的收货地址
+  </view>
 
 
-<view class='padding' style='padding-top:0px;'>
-  <view class='margin-top flex-row flex-center' url='/pages/address/address?id={{item.id}}' wx:for="{{list}}" wx:key="k" >
-    <view class='flex-1' bindtap='selectaddress' id="{{item.id}}">
-      <view class='txt-bold h5'>{{item.address}} {{item.menpai}}</view>
-      <view class='flex-row flex-center margin-top-10'>
-        <view class='default h7 bg-gray padding-10 margin-right yj1' wx:if="{{item.isdefault_value=='Y'}}" >默认地址</view>
-        <view class='default txt-white h7 bg padding-10 yj2 margin-right'>{{item.label_name}}</view>
-      <view class='h6 txt-gray margin-right'>{{item.mobile}}</view>
-      <view class='h6 txt-gray'>{{item.name}}</view>
+  <view class='padding' style='padding-top:0px;'>
+    <view class='margin-top flex-row flex-center' url='/pages/address/address?id={{item.id}}' wx:for="{{list}}" wx:key="k">
+      <view class='flex-1' bindtap='selectaddress' id="{{item.id}}">
+        <view class='txt-bold h5'>{{item.address}} {{item.menpai}}</view>
+        <view class='flex-row flex-center margin-top-10'>
+          <view class='default h7 txt-white gray-block padding-10 margin-right yj1' wx:if="{{item.isdefault_value=='Y'}}">默认地址</view>
+          <view class='default txt-white h7 bg padding-10 yj2 margin-right'>{{item.label_name}}</view>
+          <view class='h6 txt-gray margin-right'>{{item.mobile}}</view>
+          <view class='h6 txt-gray'>{{item.name}}</view>
+        </view>
       </view>
-    </view>
-    <view class='margin-left line-height-0' bindtap='gotoEdit' id="{{item.id}}" >
+      <view class='margin-left line-height-0' bindtap='gotoEdit' id="{{item.id}}">
         <image class='icon' src='{{uploadpath}}resource/{{res.	edit}}'></image>
       </view>
+    </view>
   </view>
-</view>
+ 
 </block>
 
 <view class='fixedbottom bg-gray'>
   <navigator url='/pages/address/address' hover-class="none" class='flex-row flex-center margin-top-20 margin-bottom-20'>
     <view class='flex-1'></view>
-    <view class='margin-right line-height-0' >
-        <image class='icon' src='{{uploadpath}}resource/{{res.	add}}'></image>
-      </view>
-      <view class='txt-lv'>新增地址</view>
+    <view class='margin-right line-height-0'>
+      <image class='icon' src='{{uploadpath}}resource/{{res.add}}'></image>
+    </view>
+    <view class='txt-lv'>新增地址</view>
     <view class='flex-1'></view>
   </navigator>
 </view>

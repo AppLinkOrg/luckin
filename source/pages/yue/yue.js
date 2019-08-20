@@ -12,7 +12,6 @@ import {
 class Content extends AppBase {
   constructor() {
     super();
-    //this.needauth=false;
   }
   onLoad(options) {
     this.Base.Page = this;
@@ -21,21 +20,15 @@ class Content extends AppBase {
   }
   onMyShow() {
     var that = this;
-    var instapi = new InstApi();
-    instapi.indexbanner({}, (indexbanner) => {
-      this.Base.setMyData({
-        indexbanner
-      });
+  }
+  setPageTitle() {
+    wx.setNavigationBarTitle({
+      title: '账户余额',
     });
   }
-  comingsoon() {
+  binddetail() {
     wx.navigateTo({
-      url: '/pages/send/send',
-    })
-  }
-  bindpurse() {
-    wx.navigateTo({
-      url: '/pages/purse/purse',
+      url: '/pages/yuedetail/yuedetail',
     })
   }
 }
@@ -43,6 +36,5 @@ var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
-body.comingsoon = content.comingsoon;
-body.bindpurse = content.bindpurse;
+body.binddetail = content.binddetail;
 Page(body)

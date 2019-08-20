@@ -22,6 +22,11 @@ class Content extends AppBase {
       this.Base.setMyData({list});
     });
   }
+  setPageTitle() {
+    wx.setNavigationBarTitle({
+      title: '收货地址',
+    });
+  }
   gotoEdit(e){
     wx.navigateTo({
       url: '/pages/address/address?id='+e.currentTarget.id,

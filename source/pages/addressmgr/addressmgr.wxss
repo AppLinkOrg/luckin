@@ -18,3 +18,8 @@ padding-right: 17rpx;
 padding-top:10rpx;
 padding-bottom:10rpx;
 }
+.bottom{
+  border-bottom: 2rpx solid rgb(236, 236, 236);
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}

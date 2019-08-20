@@ -1,0 +1,19 @@
+<view class="bg">
+  <view class=" flex-row flex-column  ">
+    <view class="txt-white h3 margin-top-80">0</view>
+    <view class="txt-white">总余额（元）</view>
+  </view>
+  <view class="flex-row margin-top-80">
+    <view class="btn flex-row flex-column">
+      <view class="txt-white h5 ">0</view>
+      <view class="txt-white h5">可用余额（元）</view>
+    </view>
+    <view class="btn flex-row flex-column margin-left-3">
+      <view class="txt-white h5">0</view>
+      <view class="txt-white h5">冻结余额（元）</view>
+    </view>
+  </view>
+</view>
+
+<view class="button one">我的充值二维码</view>
+<view class="button two" bindtap="binddetail">查看余额明细</view>

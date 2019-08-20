@@ -1,0 +1,17 @@
+<view class="flex-row margin-top-40">
+  <image class='icon  margin-left-30' src='{{uploadpath}}resource/{{res.say}}'></image>
+  <view class="txt-black margin-left-20">餐饮钱包说明</view>
+</view>
+<view>
+<view class="flex-row flex-column top">
+  <image class='icon-40  margin-left-30' src='{{uploadpath}}resource/{{res.canyin}}'></image>
+  <view class="margin-top-30">您的餐饮钱包有点无聊</view>
+</view>
+</view>
+
+<view class="text flex-row ">
+<view class="box margin-left-30 margin-top-30">幸运送</view>
+<view class="box margin-left-70 margin-top-30">发红包</view>
+<view class="flex-1"></view>
+<view class="box margin-top-30 margin-right-30">充值钱包</view>
+</view>

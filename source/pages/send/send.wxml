@@ -1,0 +1,29 @@
+<view class="box ">
+  <view class="flex-row">
+    <image class='icon-40 margin-top-40 margin-left-30' src='{{uploadpath}}resource/{{res.free}}'></image>
+    <view class="h4 txt-black margin-top-30 margin-left-30">免费送</view>
+    <view class="flex-1"></view>
+    <view class="btn h5">马上送</view>
+  </view>
+  <view class="h6 left ">邀请新朋友 你和他各得一杯</view>
+</view>
+
+<view class="box ">
+  <view class="flex-row">
+    <image class='icon-40 margin-top-40 margin-left-30' src='{{uploadpath}}resource/{{res.lipin}}'></image>
+    <view class="h4 txt-black margin-top-30 margin-left-30">免费送</view>
+    <view class="flex-1"></view>
+    <view class="btn h5">一键定制</view>
+  </view>
+  <view class="h6 left ">美食</view>
+</view>
+
+<view class="box ">
+  <view class="flex-row">
+    <image class='icon-40 margin-top-40 margin-left-30' src='{{uploadpath}}resource/{{res.xianjin}}'></image>
+    <view class="h4 txt-black margin-top-30 margin-left-30">一键定制</view>
+    <view class="flex-1"></view>
+    <view class="btn h5">马上送</view>
+  </view>
+  <view class="h6 left ">现金充值</view>
+</view>

@@ -1,8 +1,23 @@
 /* pages/member/member.wxss */
 
-.shadow{
-   -webkit-box-shadow: #666 0px 0px 10px;
-   -moz-box-shadow: #666 0px 0px 10px;
-   box-shadow: #666 0px 0px 10px;
-   background: gray;
+.shadow {
+  -webkit-box-shadow: #666 0px 0px 10px;
+  -moz-box-shadow: #666 0px 0px 10px;
+  box-shadow: #666 0px 0px 10px;
+  background: gray;
+}
+
+.box {
+  margin: 30rpx;
+  border-radius: 10rpx;
+  height: 11vh;
+  width: 92vw;
+  box-shadow: 1rpx 2rpx 25rpx 2rpx rgb(219, 219, 219);
+ 
+}
+.left{
+  margin-left: 145rpx;
+}
+.right{
+  margin-right: 145rpx;
 }

@@ -1,0 +1,36 @@
+.bg {
+  background-color: rgb(30, 218, 155);
+  height: 360rpx;
+}
+
+.btn {
+  background-color: rgb(69, 241, 184);
+  height: 100rpx;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  height: 80rpx;
+  width: 92vw;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.one {
+  background-color: rgb(116, 240, 198);
+  color: white;
+  margin-top: 50rpx;
+}
+
+.two {
+  border: 1rpx solid rgb(116, 240, 198);
+  color: rgb(116, 240, 198);
+  margin-top: 50rpx;
+}

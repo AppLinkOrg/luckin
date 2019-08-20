@@ -1,0 +1,46 @@
+<view class="flex-row height-100 ">
+ <image class='icon margin-left-30 h5 margin-top-30 margin-bottom-30' src='{{uploadpath}}resource/{{res.shuoming}}'></image>
+ <view class="margin-left-10 h5 margin-top-30 margin-bottom-30">发票说明</view>
+</view>
+<view class="flex-row bg">
+<view class="margin-30">按订单开票</view>
+<view class="flex-1"></view>
+<image class='icon margin-30 ' src='{{uploadpath}}resource/{{res.you}}'></image>
+</view>
+<view class="bottom"></view>
+
+<view class="flex-row bg">
+<view class="margin-30">餐饮钱包购买开票</view>
+<view class="flex-1"></view>
+<image class='icon margin-30 ' src='{{uploadpath}}resource/{{res.you}}'></image>
+</view>
+<view class="bottom"></view>
+
+<view class="flex-row bg">
+<view class="margin-30">礼品卡购买开票</view>
+<view class="flex-1"></view>
+<image class='icon margin-30 ' src='{{uploadpath}}resource/{{res.you}}'></image>
+</view>
+<view class="bottom"></view>
+
+<view class="flex-row bg">
+<view class="margin-30">充值开票</view>
+<view class="flex-1"></view>
+<image class='icon margin-30 ' src='{{uploadpath}}resource/{{res.you}}'></image>
+</view>
+<view class=" height-12"></view>
+
+<view class="flex-row bg">
+<view class="margin-30">发票记录</view>
+<view class="flex-1"></view>
+<image class='icon margin-30 ' src='{{uploadpath}}resource/{{res.you}}'></image>
+</view>
+<view class="bottom"></view>
+
+<view class="flex-row bg">
+<view class="margin-30">发票抬头</view>
+<view class="flex-1"></view>
+<image class='icon margin-30 ' src='{{uploadpath}}resource/{{res.you}}'></image>
+</view>
+
+

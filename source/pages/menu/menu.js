@@ -26,14 +26,38 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    this.Base.setMyData({
+      check:'N'
+    })
 
-    
+
+  }
+  setPageTitle() {
+    wx.setNavigationBarTitle({
+      title: '菜单',
+    });
   }
   brandtap(e) {
     //console.log(currentTarget);
     var id = e.currentTarget.id;
     console.log(id);
-    this.Base.setMyData({ s: id })
+    this.Base.setMyData({
+      s: id
+    })
+  }
+
+  binddianji(e) {
+    var checked = e.currentTarget.id;
+    if(checked=='Y'){
+      this.Base.setMyData({
+        check:'N'
+      })
+    }
+    if(checked=='N'){
+      this.Base.setMyData({
+        check:'Y'
+      })
+    }
   }
 
   onMyShow() {
@@ -55,7 +79,9 @@ class Content extends AppBase {
 
           shoplist[i].miletxt = this.Base.util.GetMileTxt(shoplist[i].mile);
         }
-        this.Base.setMyData({ shoplist });
+        this.Base.setMyData({
+          shoplist
+        });
         if (AppBase.SHOPID == 0) {
           AppBase.SHOPID = shoplist[0].id;
         }
@@ -68,35 +94,38 @@ class Content extends AppBase {
     var shoplist = this.Base.getMyData().shoplist;
     for (var i = 0; i < shoplist.length; i++) {
       if (shoplist[i].id == shop_id) {
-        this.Base.setMyData({ currentshop: shoplist[i] });
+        this.Base.setMyData({
+          currentshop: shoplist[i]
+        });
 
-
-        
-       var is=ApiUtil.checkInOpen(this.Base.getMyData().currentshop.openning);
-   
-       
-
-
+        var is = ApiUtil.checkInOpen(this.Base.getMyData().currentshop.openning);
         var shopapi = new ShopApi();
-        shopapi.menucat({ menu_id: shoplist[i].menu_id }, (menucat) => {
-          shopapi.menugoods({ menu_id: shoplist[i].menu_id }, (menugoods) => {
-            var ret=[];
-            var loc=0;
-            for(var i=0;i<menucat.length;i++){
-              menucat[i].goods=[];
+        shopapi.menucat({
+          menu_id: shoplist[i].menu_id
+        }, (menucat) => {
+          shopapi.menugoods({
+            menu_id: shoplist[i].menu_id
+          }, (menugoods) => {
+            var ret = [];
+            var loc = 0;
+            for (var i = 0; i < menucat.length; i++) {
+              menucat[i].goods = [];
               for (var j = 0; j < menugoods.length; j++) {
-                if(menucat[i].id==menugoods[j].cat_id){
+                if (menucat[i].id == menugoods[j].cat_id) {
                   menucat[i].goods.push(menugoods[j]);
                 }
               }
-              if(menucat[i].goods.length>0){
+              if (menucat[i].goods.length > 0) {
                 menucat[i].scrollstart = loc;
                 menucat[i].scrollend = loc + 37 + 110 * menucat[i].goods.length;
                 loc = loc + 37 + 110 * menucat[i].goods.length;
                 ret.push(menucat[i]);
               }
             }
-            this.Base.setMyData({ menu: ret, selectcat_id:ret[0].id});
+            this.Base.setMyData({
+              menu: ret,
+              selectcat_id: ret[0].id
+            });
           });
         });
         return;
@@ -108,9 +137,11 @@ class Content extends AppBase {
     console.log(e.detail);
 
     var isgoto = this.Base.getMyData().isgoto;
-    if(isgoto==true){
-      this.Base.setMyData({   isgoto: false });
-    }else{
+    if (isgoto == true) {
+      this.Base.setMyData({
+        isgoto: false
+      });
+    } else {
       var top = e.detail.scrollTop;
       var menu = this.Base.getMyData().menu;
       var selectcat_id = this.Base.getMyData().selectcat_id;
@@ -122,26 +153,32 @@ class Content extends AppBase {
         }
       }
       if (selectcat_id != cat_id) {
-        this.Base.setMyData({ selectcat_id: cat_id });
-        
+        this.Base.setMyData({
+          selectcat_id: cat_id
+        });
+
       }
     }
   }
-  gotoCat(e){
-    var id=e.currentTarget.id;
-    this.Base.setMyData({ "intocat_id": "cat_" + id, selectcat_id: id,isgoto:true});
+  gotoCat(e) {
+    var id = e.currentTarget.id;
+    this.Base.setMyData({
+      "intocat_id": "cat_" + id,
+      selectcat_id: id,
+      isgoto: true
+    });
   }
   selectgoods(e) {
     var id = e.currentTarget.id;
     wx.navigateTo({
-      url: '/pages/goods/goods?id='+id,
+      url: '/pages/goods/goods?id=' + id,
     })
   }
 
   dataReturnCallback(data) {
 
   }
-  chooseShop(){
+  chooseShop() {
     wx.navigateTo({
       url: '/pages/shopchoose/shopchoose',
     })
@@ -150,10 +187,11 @@ class Content extends AppBase {
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
-body.onMyShow = content.onMyShow; 
-body.setCurrent = content.setCurrent; 
-body.goodsscroll = content.goodsscroll; 
-body.gotoCat = content.gotoCat; 
+body.onMyShow = content.onMyShow;
+body.setCurrent = content.setCurrent;
+body.goodsscroll = content.goodsscroll;
+body.gotoCat = content.gotoCat;
 body.selectgoods = content.selectgoods;
 body.chooseShop = content.chooseShop;
+body.binddianji = content.binddianji;
 Page(body)

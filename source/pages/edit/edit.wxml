@@ -1,0 +1,34 @@
+<view class="top"></view>
+<view class="flex-row left right">
+  <view class="margin-20 txt-black">头像</view>
+  <view class="flex-1"></view>
+  <image class='icon-25 radius-50% margin-20' src='{{UserInfo.avatarUrl}}'></image>
+</view>
+<view class="bottom"></view>
+<view class="flex-row left right">
+  <view class="margin-20 txt-black ">用户名</view>
+  <view class="flex-1"></view>
+  <view class="margin-20 txt-black">{{memberinfo.nickName}}</view>
+</view>
+<view class="bottom"></view>
+<view class="flex-row left right">
+  <view class="margin-20 txt-black">性别</view>
+  <view class="flex-1"></view>
+  <view class="margin-20 txt-black">{{memberinfo.gender_name}}</view>
+</view>
+<view class="bottom"></view>
+<view class="flex-row left right">
+  <view class="margin-20 txt-black">绑定手机</view>
+  <view class="flex-1"></view>
+  <view class="margin-20 txt-black">{{memberinfo.mobile}}</view>
+</view>
+<view class="bottom"></view>
+<view class="flex-row left right" bindtap="bindbang">
+  <view class="margin-20 txt-black">绑定微信</view>
+  <view class="flex-1"></view>
+  <view class="margin-bottom-20 margin-top-20 txt-black">{{}}</view>
+  <image class='icon margin-top-20 ' src='{{uploadpath}}resource/{{res.you}}'></image>
+</view>
+<view class="bottom"></view>
+
+<view class="btn">退出登录</view>

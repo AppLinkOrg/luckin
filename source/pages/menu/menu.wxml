@@ -7,6 +7,10 @@
     <view class="h6 txt-gray">距您 {{currentshop.miletxt}}</view>
   </view>
   <view class="flex-1"></view>
+  <view>
+    <image wx:if="{{check=='N'}}" id="N" class="icon-40 margin-right-30" src='{{uploadpath}}resource/{{res.zitiwaisong}}' bindtap="binddianji"></image>
+    <image wx:if="{{check=='Y'}}" id="Y" class="icon-40 margin-right-30" src='{{uploadpath}}resource/{{res.waisonziti}}' bindtap="binddianji"></image>
+  </view>
 </view>
 <view class='line-height-0'>
   <image src='{{uploadpath}}resource/{{res.img}}' style='width:100%;height:280rpx;' mode="aspectFill"></image>

@@ -1,0 +1,23 @@
+.bottom {
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.btn {
+  border-radius: 10rpx;
+  width: 92vw;
+  height: 5vh;
+  background-color: #5fe0a3;
+  color: white;
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left{
+  margin-left:20rpx; 
+}
+.right{
+  margin-right:20rpx; 
+}

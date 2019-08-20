@@ -15,7 +15,7 @@
       <image class='icon-25  padding-20 '  src='{{uploadpath}}resource/{{res.kafei}}'></image>
     </view>
   </navigator>
-  <view class=" padding-20 flex-row flex-center txt-black  border-bottom " bindtap='comingsoon' >
+  <view class=" padding-20 flex-row flex-center txt-black  border-bottom " bindtap='bindpurse' >
     <view class="flex-1 flex-wrap">
       <view class="flex-row flex-center">
         <view class="txt-bold  txt-black ">钱包</view>

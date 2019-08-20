@@ -1,29 +1,25 @@
 /* pages/menu/menu.wxss */
-.yy{
-border-radius: 60rpx;
-border:1px solid #81A8CF;
 
-margin-right: 20rpx
-
-
+.yy {
+  border-radius: 60rpx;
+  border: 1px solid #81a8cf;
+  margin-right: 20rpx;
 }
-.bg{
 
-
-
-   background: white;
+.bg {
+  background: white;
   color: black;
 }
 
-.zitiwaisong{
-  width:120rpx;
+.zitiwaisong {
+  width: 120rpx;
   height: 60rpx;
 }
 
-.menuopt{
-  height: calc( 100vh - 400rpx )
+.menuopt {
+  height: calc(100vh - 400rpx);
 }
 
-.line{
-  height:1rpx;
+.line {
+  height: 1rpx;
 }

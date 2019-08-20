@@ -293,6 +293,11 @@ class Content extends AppBase {
       url: '/pages/menu/menu',
     })
   }
+  setPageTitle() {
+    wx.setNavigationBarTitle({
+      title: '购物车',
+    });
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();

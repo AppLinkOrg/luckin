@@ -1,22 +1,20 @@
-page{
-
-
-  background-color: #FAFAFA;
+page {
+  background-color: #fafafa;
 }
-.bg{
 
-
+.bg {
   background-color: white;
 }
-.qzf{
 
+.qzf {
   height: 43rpx;
-padding-left:20rpx;
-padding-right: 20rpx;
-padding-top:1rpx;
-padding-bottom: 1rpx;
-border:1px solid #FF9800;
-border-radius: 10rpx;
-
-
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 1rpx;
+  padding-bottom: 1rpx;
+  border: 1px solid #ff9800;
+  border-radius: 10rpx;
+}
+.xian{
+   border-top: 1px solid rgb(233, 233, 233);
 }
