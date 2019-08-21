@@ -475,6 +475,9 @@ button[disabled][type=primary] {
 .margin-bottom-20 {
   margin-bottom: 20rpx;
 }
+.margin-bottom-30 {
+  margin-bottom: 30rpx;
+}
 
 .margin-bottom-40 {
   margin-bottom: 40rpx;
@@ -658,6 +661,10 @@ button[disabled][type=primary] {
 .icon-100 {
   width: 200rpx;
   height: 200rpx;
+}
+.icon-150 {
+  width:300rpx;
+  height: 300rpx;
 }
 
 .border-raidus-50 {

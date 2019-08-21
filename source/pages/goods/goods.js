@@ -21,7 +21,9 @@ class Content extends AppBase {
     //options.id = 1;
     this.Base.needauth = true;
     super.onLoad(options);
-    this.Base.setMyData({ num:1});
+    this.Base.setMyData({
+      num: 1
+    });
   }
   onMyShow() {
     var that = this;
@@ -32,6 +34,11 @@ class Content extends AppBase {
       this.Base.setMyData(info);
       this.loadprice();
     });
+  }
+  fanhui() {
+    wx.navigateBack({
+
+    })
   }
   loadprice() {
     var data = this.Base.getMyData();
@@ -44,8 +51,8 @@ class Content extends AppBase {
     var attrs = this.Base.getMyData().attrs;
     for (var i = 0; i < attrs.length; i++) {
       for (var j = 0; j < attrs[i].vals.length; j++) {
-        if (attrs[i].vals[j].selected=="Y"){
-          if (attrs[i].isshow=='Y'){
+        if (attrs[i].vals[j].selected == "Y") {
+          if (attrs[i].isshow == 'Y') {
             pricemsg += "+" + attrs[i].vals[j].sname + "¥" + attrs[i].vals[j].price;
           }
           vals.push(parseInt(attrs[i].vals[j].id));
@@ -54,7 +61,11 @@ class Content extends AppBase {
       }
     }
     vals.sort();
-    this.Base.setMyData({ pricemsg, totalprice: price, vals: vals.join(",")});
+    this.Base.setMyData({
+      pricemsg,
+      totalprice: price,
+      vals: vals.join(",")
+    });
   }
   selectval(e) {
     var id = e.currentTarget.id;
@@ -78,18 +89,22 @@ class Content extends AppBase {
     });
     this.loadprice();
   }
-  jian(){
-    var num=this.Base.getMyData().num;
-    if(num>1){
+  jian() {
+    var num = this.Base.getMyData().num;
+    if (num > 1) {
       num--;
-      this.Base.setMyData({ num });
+      this.Base.setMyData({
+        num
+      });
     }
   }
   jia() {
     var num = this.Base.getMyData().num;
     if (num < 99) {
       num++;
-      this.Base.setMyData({ num });
+      this.Base.setMyData({
+        num
+      });
     }
   }
   addToCart() {
@@ -97,14 +112,19 @@ class Content extends AppBase {
     var shopapi = new ShopApi();
     shopapi.addtocart({
       goods_id: data.id,
-      vals:data.vals,
-      num:data.num
+      vals: data.vals,
+      num: data.num
     }, (ret) => {
       console.log(ret);
       wx.navigateBack({
-        
+
       })
     });
+  }
+  bindsong() {
+    wx.navigateTo({
+      url: '/pages/money/money',
+    })
   }
 }
 var content = new Content();
@@ -113,8 +133,10 @@ body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.jia = content.jia;
 body.jian = content.jian;
-body.selectval = content.selectval; 
-body.loadprice = content.loadprice; 
+body.selectval = content.selectval;
+body.loadprice = content.loadprice;
 body.addToCart = content.addToCart;
 body.chooseShop = content.chooseShop;
+body.fanhui = content.fanhui;
+body.bindsong = content.bindsong;
 Page(body)

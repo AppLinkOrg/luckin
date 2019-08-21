@@ -1,0 +1,4 @@
+<view class="flex-row flex-column margin-top-5 bg-white">
+  <view class="margin-top  ">向门店出示二维码，请门店人员为您充值</view>
+  <image class="icon-150 margin-top margin-bottom-40" src="{{uploadpath}}resource/{{res.code}}"></image>
+</view>

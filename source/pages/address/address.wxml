@@ -1,90 +1,90 @@
 <!--pages/address/address.wxml-->
-<form bindsubmit='save' >
-<input type='hidden' value='{{gender}}' name="gender" hidden='1'></input>
-<input type='hidden' value='{{lat}}' name="lat" hidden='1'></input>
-<input type='hidden' value='{{lng}}' name="lng" hidden='1'></input>
-<input type='hidden' value='{{label}}' name="label" hidden='1'></input>
-<input type='hidden' value='{{id}}' name="primary_id" hidden='1'></input>
-<input type='hidden' value='{{isdefault}}' name="isdefault" hidden='1'></input>
-      <input class='h5' name="address" value='{{address}}' placeholder='请输入收货地址' disabled='{{true}}' hidden='1' />
-<view class='padding-20'>
-  <view class='flex-row flex-center padding-bottom border-bottom'>
-    <view class='f txt-gray h5'>联系人</view>
-    <view>
-      <input class='h5 ' name="name" value='{{name}}' placeholder='请输入联系人姓名' />
-    </view>
-  </view>
-  <view class='flex-row flex-center padding-bottom margin-top border-bottom'>
-    <view class='f txt-gray h5'>性别</view>
-    <view class='flex-row flex-center'>
-      <view class='margin-right' bindtap='selectgender' id="M">
-        <image class='icon' src='{{uploadpath}}resource/{{gender=="M"?res.check:res.uncheck}}'></image>
+<form bindsubmit='save'>
+  <input type='hidden' value='{{gender}}' name="gender" hidden='1'></input>
+  <input type='hidden' value='{{lat}}' name="lat" hidden='1'></input>
+  <input type='hidden' value='{{lng}}' name="lng" hidden='1'></input>
+  <input type='hidden' value='{{label}}' name="label" hidden='1'></input>
+  <input type='hidden' value='{{id}}' name="primary_id" hidden='1'></input>
+  <input type='hidden' value='{{isdefault}}' name="isdefault" hidden='1'></input>
+  <input class='h5' name="address" value='{{address}}' placeholder='请输入收货地址' disabled='{{true}}' hidden='1' />
+  <view class='padding-20'>
+    <view class='flex-row flex-center padding-bottom border-bottom'>
+      <view class='f txt-gray h5'>联系人</view>
+      <view>
+        <input class='h5 ' name="name" value='{{name}}' placeholder='请输入联系人姓名' />
       </view>
-      <view class='f1 h5'>先生</view>
+    </view>
+    <view class='flex-row flex-center padding-bottom margin-top border-bottom'>
+      <view class='f txt-gray h5'>性别</view>
+      <view class='flex-row flex-center'>
+        <view class='margin-right' bindtap='selectgender' id="M">
+          <image class='icon' src='{{uploadpath}}resource/{{gender=="M"?res.check:res.uncheck}}'></image>
+        </view>
+        <view class='f1 h5'>先生</view>
+        <view class='margin-right'>
+          <image class='icon' bindtap='selectgender' id="F" src='{{uploadpath}}resource/{{gender=="F"?res.check:res.uncheck}}'></image>
+        </view>
+        <view class='f1 h5'>女士</view>
+      </view>
+    </view>
+    <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
+      <view class='f  txt-gray h5'>手机号</view>
+      <view>
+        <input class='h5 ' name="mobile" value='{{mobile}}' placeholder='请输入联系人手机号' />
+      </view>
+    </view>
+    <view class='flex-row flex-center margin-top padding-bottom border-bottom' bindtap='search'>
+      <view class='f2 txt-gray  h5'>地址</view>
+      <view class='flex-1 h5' wx:if="{{address!=''}}">
+        {{address}}
+      </view>
+      <view class='flex-1 h5  txt-gray' wx:if="{{address==''}}">
+        请输入地址
+      </view>
+      <view class='line-height-0'>
+        <image class='icon' src='{{uploadpath}}resource/{{res.you}}'></image>
+      </view>
+    </view>
+    <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
+      <view class='f txt-gray h5'>门牌号</view>
+      <view>
+        <input class='h5' name="menpai" value='{{menpai}}' placeholder='请输入门牌号' />
+      </view>
+    </view>
+    <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
+      <view class='f txt-gray h5'>标签</view>
+      <view class='flex-row flex-wrap flex-1'>
+        <view class='biaoqian txt-gray {{label=="1"?"bianqianavt":""}}' bindtap='selectlabel' id="1">
+          公司
+        </view>
+        <view class='biaoqian txt-gray {{label=="2"?"bianqianavt":""}}' bindtap='selectlabel' id="2">
+          家
+        </view>
+        <view class='biaoqian txt-gray {{label=="3"?"bianqianavt":""}}' bindtap='selectlabel' id="3">
+          学校
+        </view>
+      </view>
+    </view>
+    <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
       <view class='margin-right'>
-        <image class='icon' bindtap='selectgender' id="F" src='{{uploadpath}}resource/{{gender=="F"?res.check:res.uncheck}}'></image>
-      </view>
-      <view class='f1 h5'>女士</view>
-    </view>
-  </view>
-  <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
-    <view class='f  txt-gray h5'>手机号</view>
-    <view>
-      <input class='h5 ' name="mobile" value='{{mobile}}' placeholder='请输入联系人手机号' />
-    </view>
-  </view>
-  <view class='flex-row flex-center margin-top padding-bottom border-bottom' bindtap='search'>
-    <view class='f2 txt-gray  h5'>地址</view>
-    <view class='flex-1 h5' wx:if="{{address!=''}}">
-      {{address}}
-    </view>
-    <view class='flex-1 h5  txt-gray' wx:if="{{address==''}}">
-      请输入地址
-    </view>
-    <view class='line-height-0'>
-      <image class='icon' src='{{uploadpath}}resource/{{res.	you}}'></image>
-    </view>
-  </view>
-  <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
-    <view class='f txt-gray h5'>门牌号</view>
-    <view>
-      <input class='h5' name="menpai" value='{{menpai}}' placeholder='请输入门牌号' />
-    </view>
-  </view>
-  <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
-    <view class='f txt-gray h5'>标签</view>
-    <view class='flex-row flex-wrap flex-1'>
-      <view class='biaoqian txt-gray {{label=="1"?"bianqianavt":""}}' bindtap='selectlabel' id="1">
-        公司
-      </view>
-      <view class='biaoqian txt-gray {{label=="2"?"bianqianavt":""}}' bindtap='selectlabel' id="2">
-        家
-      </view>
-      <view class='biaoqian txt-gray {{label=="3"?"bianqianavt":""}}' bindtap='selectlabel' id="3">
-        学校
-      </view>
-    </view>
-  </view>
-  <view class='flex-row flex-center margin-top padding-bottom border-bottom'>
-    <view class='margin-right'>
         <image class='icon' bindtap='setdefault' id="{{isdefault=='Y'?'N':'Y'}}" src='{{uploadpath}}resource/{{isdefault=="Y"?res.check:res.uncheck}}'></image>
       </view>
       <view class=' h5'>设置为默认地址</view>
+    </view>
   </view>
-</view>
 
-<view class='fixedbottom'>
-  <view class='padding-30'>
-    <view class='flex-row'>
-      <view class='flex-1 margin-right-20' wx:if="{{id!=undefined}}" >
-        <button bindtap='remove'>删除</button>
-      </view>
-      
-      <view class='flex-1'>
-        <button type='lv' form-type='submit' class='txt-white'>保存</button>
+  <view class='fixedbottom'>
+    <view class='padding-30'>
+      <view class='flex-row'>
+        <view class='flex-1 margin-right-20' wx:if="{{id!=undefined}}">
+          <button bindtap='remove'>删除</button>
+        </view>
+
+        <view class='flex-1'>
+          <button type='lv' form-type='submit' class='txt-white'>保存</button>
+        </view>
       </view>
     </view>
   </view>
-</view>
 
 </form>

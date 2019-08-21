@@ -1,0 +1,18 @@
+page{
+  background-color:  #f1f1f1;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+}
+.one{
+  width: 50vw;
+  height: 90rpx;
+}
+
+.borderleft {
+  border-right: 1px solid #b3b3b3;
+  height: 90rpx;
+  margin-top: 10rpx;
+  
+}

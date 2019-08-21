@@ -15,5 +15,5 @@
   </view>
 </view>
 
-<view class="button one">我的充值二维码</view>
+<view class="button one" bindtap="binderweima">我的充值二维码</view>
 <view class="button two" bindtap="binddetail">查看余额明细</view>

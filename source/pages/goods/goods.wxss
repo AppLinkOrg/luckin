@@ -1,29 +1,56 @@
-.xx-Y{
-border-radius: 35rpx;
-background-color: white;
-font-size: 24rpx;
-width:25%;
-border:1px solid #5FE0A3;
-color: #5FE0A3;
+.xx-Y {
+  border-radius: 35rpx;
+  background-color: white;
+  font-size: 24rpx;
+  width: 25%;
+  border: 1px solid #5fe0a3;
+  color: #5fe0a3;
 }
-.xx-N{
 
-border-radius: 35rpx;
-background-color: #E6E6E6;
-font-size: 24rpx;
-width:25%;
-border:1px solid white
+.xx-N {
+  border-radius: 35rpx;
+  background-color: #e6e6e6;
+  font-size: 24rpx;
+  width: 25%;
+  border: 1px solid white;
 }
-.bg1{
-background-color:#5FE0A3;
-padding-top:20rpx;
-padding-bottom:20rpx;
-margin:10rpx;
+
+.bg1 {
+  background-color: #5fe0a3;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  margin: 10rpx;
 }
-.bg2{
-background-color:#7FA9D3;
-padding-top:20rpx;
-padding-bottom:20rpx;
-margin:10rpx;
-  
+
+.bg2 {
+  background-color: #7fa9d3;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  margin: 10rpx;
+}
+.bott{
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  border-top: 1rpx solid #dadada;
+}
+.button{
+  background-color: rgb(233, 232, 232);
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+  width: 33vw;
+  justify-content: center;
+}
+.right{
+  border-right: 1rpx solid rgb(36, 25, 25);
+  height: 10rpx;
+}
+.button1{
+  background-color: #5fe0a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90rpx;
+  width: 33vw;
 }

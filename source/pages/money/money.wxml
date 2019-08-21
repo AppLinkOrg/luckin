@@ -1,0 +1,35 @@
+<view class="flex-row margin-top-20">
+  <image class='icon-17 margin-left-30 ' src='{{uploadpath}}resource/{{res.shuoming}}'></image>
+  <view class=" margin-left-10">购买以下饮品券享充2赠1，不同饮品券可组合购买，充2张立获2.8折豆奶威化饼干棒券。</view>
+</view>
+<view class="box margin-top-20">
+  <view class="margin-left-20 margin-top-20 flex-row">
+    <view class="margin-left-30">￥21</view>
+    <view class="margin-left-70">B1全国通用</view>
+    <image class='icon-17 margin-left-30 margin-top-5' src='{{uploadpath}}resource/{{res.shuoming}}'></image>
+    <view class="flex-1"></view>
+    <image class='icon ' src='{{uploadpath}}resource/{{res.jianshao}}' bindtap="bindjian"></image>
+    <view class="margin-left-10 margin-right-10">{{num}}</view>
+    <image class='icon-17 margin-right-30 ' src='{{uploadpath}}resource/{{res.zengjia}}' bindtap="bindadd"></image>
+
+
+  </view>
+</view>
+<view class="flex-row flex-column">
+  <image class='icon-100 margin-top-80 ' src='{{uploadpath}}resource/{{res.lihe}}'></image>
+</view>
+<view class="flex-row margin-top-80">
+  <image class='icon-17 margin-left-30' src='{{uploadpath}}resource/{{res.check}}'></image>
+  <view class="margin-left-10 h6">我已阅读并同意</view>
+  <view class="txt-primary h6">《支付协议》</view>
+</view>
+<view class="margin-left-30 margin-top-30 h6 margin-right-30">温馨提示：仅支持开具电子发票，订单完成后可前往发票管理中开，根据国家税务总局 </view>
+
+<view class='flex-row margin-top weizhi'>
+  <view class='btn0ne '>
+    <view class='margin-left-20 h5 txt-black'> 应付合计</view>
+    <view class=' h3 txt-black'> ￥</view>
+  </view>
+  <view class='btnTwo txt-white' >去支付</view>
+
+</view>

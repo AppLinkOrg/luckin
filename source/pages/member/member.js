@@ -26,7 +26,7 @@ class Content extends AppBase {
       title: '我的',
     });
   }
-  bindyue(){
+  bindyue() {
     wx.navigateTo({
       url: '/pages/yue/yue',
     })
@@ -41,9 +41,19 @@ class Content extends AppBase {
       url: '/pages/edit/edit',
     })
   }
-  bindfapiao(){
+  bindfapiao() {
     wx.navigateTo({
       url: '/pages/fapiao/fapiao',
+    })
+  }
+  bindduihuan() {
+    wx.navigateTo({
+      url: '/pages/duihuan/duihuan',
+    })
+  }
+  bindlipin(){
+    wx.navigateTo({
+      url: '/pages/lipincode/lipincode',
     })
   }
 }
@@ -55,4 +65,6 @@ body.bindgeren = content.bindgeren;
 body.bindyue = content.bindyue;
 body.bindpurse = content.bindpurse;
 body.bindfapiao = content.bindfapiao;
+body.bindduihuan = content.bindduihuan;
+body.bindlipin = content.bindlipin;
 Page(body)

@@ -22,7 +22,7 @@ class Content extends AppBase {
     super.onLoad(options);
     this.Base.setMyData({
       list: [],
-      check: "B",
+      check: "A",
     });
   }
   setPageTitle() {

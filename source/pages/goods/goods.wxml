@@ -1,7 +1,8 @@
-<view style='height:230rpx;background:url({{uploadpath}}goods/{{topbanner}});'>
-  <view class="margin-left h4 txt-white txt-bold" style='margin-top:100rpx'>{{name}}</view>
-  <view class="margin-left h6 txt-white txt-bold">{{engname}}</view>
+<view style='height:430rpx;background:url({{uploadpath}}goods/{{topbanner}});'>
+  <image class='icon margin-top-20 margin-left-30' bindtap='fanhui' src='{{uploadpath}}resource/{{res.fanhui}}'></image>
 </view>
+<view class="margin-left h4 txt-black txt-bold" style='margin-top:50rpx'>{{name}}</view>
+<view class="margin-left h6 txt-black txt-bold">{{engname}}</view>
 <view class="flex-row  margin-top-20" wx:for="{{attrs}}" wx:key="k">
   <view class="margin-top-10 margin-left-20  flex-1 ">{{item.name}}</view>
   <view class="flex-row flex-5 text-center flex-center flex-wrap">
@@ -10,9 +11,18 @@
 </view>
 
 <view class="flex-wrap  flex-center">
+  <view class='padding-20'>
+    <view class='border-bottom'></view>
+    <view class='h5 margin-top-10'>商品描述</view>
+    <view>
+      <text class='h6'>{{summary}}
+      图片仅供参考，请以实物为准！</text>
+    </view>
+  </view>
+</view>
+<view class="bott margin-top-20">
   <view class="flex-row flex-center">
-    <view class="padding-20 flex-1 txt-black">￥{{totalprice}}</view>
-
+    <view class="padding-top-20 padding-left-20 padding-right-20 flex-1 txt-black">￥{{totalprice}}</view>
     <view bindtap='jian'>
       <image class='icon padding-right-20 margin-top-5' src='{{uploadpath}}resource/{{res.jianshao}}'></image>
     </view>
@@ -22,17 +32,13 @@
     </view>
   </view>
   <view class="padding-20 h6">{{pricemsg}}</view>
-
-  
-  <view class='padding-20' >
-    <view class='border-bottom'></view>
-    <view class='h5 margin-top-10'>商品描述</view>
-    <view >
-      <text class='h6'>{{summary}}
-      图片仅供参考，请以实物为准！</text>
-    </view>
+ 
+  <view class="flex-row" bindtap='addToCart'>
+    <view class="button txt-orange" bindtap="bindsong">充2送1</view>
+    <view class="button margin-left-5 margin-right-5 txt-lv">立即购买</view>
+    <view class="button1 txt-white " bindtap='jia'>加入购物车</view>
   </view>
-
+<!-- 
   <view class='padding-20' bindtap='addToCart'>
     <view class="bg1  flex-row flex-center">
       <view class='flex-1'></view>
@@ -44,6 +50,5 @@
       </view>
       <view class='flex-1'></view>
     </view>
-  </view>
-
+  </view> -->
 </view>

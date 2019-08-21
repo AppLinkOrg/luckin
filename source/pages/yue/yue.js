@@ -31,10 +31,17 @@ class Content extends AppBase {
       url: '/pages/yuedetail/yuedetail',
     })
   }
+  
+  binderweima(){
+  wx.navigateTo({
+    url: '/pages/erweima/erweima',
+  })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.binddetail = content.binddetail;
+body.binderweima = content.binderweima;
 Page(body)

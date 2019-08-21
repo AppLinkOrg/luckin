@@ -1,31 +1,44 @@
-page{
-
-background-color: #FAFAFA;
-
+page {
+  background-color: #f1f1f1;
 }
-.bg{
-background-color: white;
 
+.bg {
+  background-color: white;
 }
-.xm{
- padding-top:30rpx;
- padding-bottom: 30rpx;
 
-
+.xm {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
 }
-.aa{
 
-  color: #5FE0A3;
+.aa {
+  color: #5fe0a3;
 }
-.jiesuan{
 
-
-
+.jiesuan {
   width: 100vw;
   position: fixed;
-  bottom:0px;
+  bottom: 0px;
   justify-content: center;
+}
+.bott{
+  border-top: 1rpx solid #f1f1f1;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+}
 
-
-
+.btn{
+  background-color: white;
+  width: 60vw;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+.btnone{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 90rpx;
+  background-color: #5FE0A3;
 }

@@ -1,16 +1,16 @@
 <view class="xian"></view>
 <view class='flex-row  flex-center white-block' style='height:80rpx;'>
   <view class='flex-row flex-column flex-1' data-check='A' bindtap='bindcheck'>
-    <view class='  flex-1 text-center {{check=="A"?"txt-lv":""}}'>全部</view>
+    <view class='txt-bold  flex-1 text-center {{check=="A"?"txt-lv":""}}'>全部</view>
     <view class='order {{check=="A"?"bg-lv":"bg-white"}}'></view>
   </view>
   <view class='flex-row flex-column flex-1' data-check='B' bindtap='bindcheck'>
-    <view class=' flex-1 text-center {{check=="B"?"txt-lv":""}}' data-check='B' bindtap='bindcheck'>立等可取</view>
+    <view class='txt-bold flex-1 text-center {{check=="B"?"txt-lv":""}}' data-check='B' bindtap='bindcheck'>立等可取</view>
     <view class='order {{check=="B"?"bg-lv":"bg-white"}}'></view>
   </view>
 
   <view class='flex-row flex-column flex-1' data-check='C' bindtap='bindcheck'>
-    <view class=' flex-1 text-center {{check=="C"?"txt-lv":""}}' data-check='C' bindtap='bindcheck'>预约订单</view>
+    <view class='txt-bold flex-1 text-center {{check=="C"?"txt-lv":""}}' data-check='C' bindtap='bindcheck'>预约订单</view>
     <view class='wait_blue' hidden='{{waitshow!=1}}'></view>
     <view class='order {{check=="C"?"bg-lv":"bg-white"}}'></view>
   </view>

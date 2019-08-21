@@ -1,0 +1,22 @@
+<view class="flex-row flex-column  bg-white ">
+  <view class="margin-bottom-30 ">礼品卡记录</view>
+
+</view>
+<view class="flex-row flex-column margin-top-80">
+
+  <image class="icon-40" src="{{uploadpath}}resource/{{res.lipincode}}"></image>
+  <view class="margin-bottom-30 margin-top-30">您还没有礼品卡哦</view>
+</view>
+
+<view class="bg-white btn flex-row">
+
+  <view class="flex-row flex-column margin-top-10 one">
+    <image class="icon-17" src="{{uploadpath}}resource/{{res.lipincode}}"></image>
+    <view class="margin-bottom-10 h5">购买礼品卡</view>
+  </view>
+  <view class="borderleft"></view>
+  <view class="flex-row flex-column margin-top-10 one">
+    <image class="icon-17" src="{{uploadpath}}resource/{{res.lipincode}}"></image>
+    <view class="margin-bottom-10 h5 ">赠送礼品卡</view>
+  </view>
+</view>

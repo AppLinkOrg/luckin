@@ -1,0 +1,17 @@
+.page {
+  background-color: #f1f1f1;
+}
+
+.btn {
+  background-color: #5fe0a3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  width: 92vw;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 10rpx;
+  margin-top: 80rpx;
+}

@@ -24,7 +24,7 @@
     <view class="margin-left-40 h5 margin-top-20">优惠券</view>
   </view>
 
-  <view class=" margin-top-20 margin-left-30">
+  <view class=" margin-top-20 margin-left-30" bindtap="bindlipin">
     <view class="margin-left-70 h5">张</view>
     <view class="margin-left-40 h5 margin-top-20">礼品卡</view>
   </view>
@@ -67,6 +67,16 @@
         <image class='icon' src='{{uploadpath}}resource/{{res.fapiao}}'></image>
       </view>
       <view class='flex-1 '>发票管理</view>
+      <view class='line-height-0'>
+        <image class='icon' src='{{uploadpath}}resource/{{res.you}}'></image>
+      </view>
+    </view>
+
+    <view class='flex-row flex-center  margin-top-60' hover-class="none" bindtap="bindduihuan">
+      <view class='margin-right line-height-0'>
+        <image class='icon' src='{{uploadpath}}resource/{{res.duihuan}}'></image>
+      </view>
+      <view class='flex-1 '>兑换优惠</view>
       <view class='line-height-0'>
         <image class='icon' src='{{uploadpath}}resource/{{res.you}}'></image>
       </view>

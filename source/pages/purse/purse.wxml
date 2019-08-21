@@ -11,7 +11,7 @@
 
 <view class="text flex-row ">
 <view class="box margin-left-30 margin-top-30">幸运送</view>
-<view class="box margin-left-70 margin-top-30">发红包</view>
+<view class="box margin-left-70 margin-top-30" bindtap="bindlucky">发红包</view>
 <view class="flex-1"></view>
-<view class="box margin-top-30 margin-right-30">充值钱包</view>
+<view class="box margin-top-30 margin-right-30" bindtap="bindmoney">充值钱包</view>
 </view>
